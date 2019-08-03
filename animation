@@ -1,0 +1,40 @@
+import pygame
+
+BLACK=(0,0,0)
+WHITE=(255,255,255)
+GREEN=(0,255,0)
+RED = ( 255, 0, 0)
+BLUE = ( 0, 0, 255)
+
+pygame.init()
+
+size=(700,500)
+screen=pygame.display.set_mode(size)
+pygame.display.set_caption("My Game")
+
+done=False
+clock=pygame.time.Clock()
+
+while not done:
+    screen.fill(WHITE)
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            done=True
+    #Game logic should go here
+    #Drawing code should go here
+    rect=(10,10),(200,200)
+    rect2=(11,10),(100,100)
+    rect3=(110,10),(99,100)
+    rect4=(11,108),(100,100)
+    rect5=(110,108),(100,100)
+    pygame.draw.rect(screen,BLACK,rect,5)
+    pygame.draw.rect(screen, BLUE, rect2)
+    pygame.draw.rect(screen, RED, rect3)
+    pygame.draw.rect(screen, RED, rect4)
+    pygame.draw.rect(screen, BLUE, rect5)
+    pygame.draw.line(screen, WHITE, (10, 110), (210, 110), 5)
+    pygame.draw.line(screen, WHITE, (110, 10), (110, 210), 5)
+    pygame.display.flip()
+    clock.tick(50)
+
+pygame.quit()
